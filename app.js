@@ -29,17 +29,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-// Configura CORS utilizando tu función personalizada
-const allowedOrigins = ['https://beamish-moonbeam-68a707.netlify.app'];
-app.use(cors({
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-}));
+app.use(cors());
 
 // Routes
 app.use("/api", postRoutes);
