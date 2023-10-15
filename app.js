@@ -35,7 +35,7 @@ app.use(cors());
 app.use("/api", postRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Hola gente");
 })
 
 connectDB();
